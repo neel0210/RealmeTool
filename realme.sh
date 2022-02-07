@@ -6,6 +6,7 @@ platform="tools/platform-tools"
 custom="tools/debloat/custom.sh"
 apk=$(find tools/apk/*.apk)
 zip=$(find tools/zip/*.zip)
+magisk=$(find tools/magisk/*.zip)
 #
 # Script
 clear
@@ -26,6 +27,7 @@ echo "2 = Boot to fastboot or recovery"
 echo "3 = Debloat"
 echo "4 = Install an APK"
 echo "5 = Flash zip in recovery"
+echo "6 = Install Magisk v24"
 echo "10 = exit"
 read n
 # Here we go
@@ -165,6 +167,10 @@ if [ $n -eq 4 ]; then
 	echo -e Searching for available APKs
 	echo -e
 	echo -e "Found APKs: $apk"
+	echo -e 
+	echo "running script again"
+	sleep 2
+	bash realme.sh
 fi
 # 5th
 if [ $n -eq 5 ]; then
@@ -193,4 +199,46 @@ if [ $n -eq 5 ]; then
 	read -n1 -r key
 	adb sideload $zip
 	echo "done flashing | now reboot to system"
+	sleep 5
+	echo "running script again"
+	sleep 2
+	bash realme.sh
+fi
+# 6th
+if [ $n -eq 6 ]; then
+	echo -e
+	echo ---------------------------
+	echo      Flashing Magisk
+	echo ---------------------------
+	echo -e
+	echo "#  Disclaimer"
+	echo "#"
+	echo "# Make sure you have USB debugging on"
+	echo "#"
+	echo -e
+	echo -e "                   If done press ANY KEY to get going"
+	read -n1 -r key
+	echo -e Searching for Magisk zip
+	echo -e
+				if [ -f "$magisk" ]; then
+					echo -----------------------------------------------------
+					echo         "Magisk IS THERE; thus installing"
+					echo -----------------------------------------------------				
+					sleep 4
+					adb devices
+					adb reboot recovery
+					echo -e " Start Sideload  | If done press ANY KEY to get going"
+					read -n1 -r key		
+					adb sideload $magisk
+					echo "done flashing | now reboot to system"
+				else
+					echo ------------------------------------------------------------			
+					echo    "Magisk is NOT THERE; Check for zip file in Tools/magisk"
+					echo ------------------------------------------------------------		
+					sleep 4
+				fi
+	sleep 5
+	echo "running script again"
+	sleep 2
+	bash realme.sh			
 fi
