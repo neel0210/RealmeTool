@@ -5,8 +5,10 @@
     <b>Management tool for Realme Device</b>
         </br>
  </p>
-
-# Realme Tool🔥
+ 
+<p align="center">
+ <b><i>_Realme Tool🔥_</i></b>
+</p>
 
 ![Stars](https://img.shields.io/github/stars/neel0210/RealmeTool)
 ![Forks](https://img.shields.io/github/forks/neel0210/RealmeTool)
@@ -19,3 +21,15 @@
 ![License](https://img.shields.io/github/license/neel0210/RealmeTool)
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/neel0210/RealmeTool)
 [![Join Channel!](https://img.shields.io/badge/Join%20Channel-!-red)](https://t.me/prishsupport)
+
+#### Common things this tool can do for you!
+
+List:
+
+- 1st (`Install adb and platform tools`)
+- 2nd (`Boot to recovery and bootloder`)
+- 3rd (`Debloat RealmeUI | AOSP`)
+- 4th (`Install an APK`)
+- 5th (`Flashing zip file`)
+- 6th (`Install Magisk`)
+- Much more soon!
