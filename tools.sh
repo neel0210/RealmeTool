@@ -2,11 +2,14 @@
 #
 #
 # export variables here
+home=$(pwd)
 platform="tools/platform-tools"
 custom="tools/debloat/custom.sh"
 apk=$(find tools/apk/*.apk)
 zip=$(find tools/zip/*.zip)
 magisk=$(find tools/magisk/*.zip)
+fw=$(find tools/extract/*.zip)
+hey="ffu_tool"
 #
 # Script
 clear
@@ -28,6 +31,7 @@ echo "3 = Debloat"
 echo "4 = Install an APK"
 echo "5 = Flash zip in recovery"
 echo "6 = Install Magisk v24"
+echo "7 = Extract RUI Fimrware"
 echo "10 = exit"
 read n
 # Here we go
@@ -220,25 +224,65 @@ if [ $n -eq 6 ]; then
 	read -n1 -r key
 	echo -e Searching for Magisk zip
 	echo -e
-				if [ -f "$magisk" ]; then
-					echo -----------------------------------------------------
-					echo         "Magisk IS THERE; thus installing"
-					echo -----------------------------------------------------				
-					sleep 4
-					adb devices
-					adb reboot recovery
-					echo -e " Start Sideload  | If done press ANY KEY to get going"
-					read -n1 -r key		
-					adb sideload $magisk
-					echo "done flashing | now reboot to system"
-				else
-					echo ------------------------------------------------------------			
-					echo    "Magisk is NOT THERE; Check for zip file in Tools/magisk"
-					echo ------------------------------------------------------------		
-					sleep 4
-				fi
+	if [ -f "$magisk" ]; then
+		echo -----------------------------------------------------
+		echo         "Magisk IS THERE; thus installing"
+		echo -----------------------------------------------------				
+		sleep 4
+		adb devices
+		adb reboot recovery
+		echo -e " Start Sideload  | If done press ANY KEY to get going"
+		read -n1 -r key		
+		adb sideload $magisk
+		echo "done flashing | now reboot to system"
+	else
+		echo ------------------------------------------------------------			
+		echo    "Magisk is NOT THERE; Check for zip file in Tools/magisk"
+		echo ------------------------------------------------------------		
+		sleep 4
+	fi
 	sleep 5
 	echo "running script again"
 	sleep 2
 	bash realme.sh			
+fi
+#7th
+if [ $n -eq 7 ]; then
+	echo -e
+	echo --------------------
+	echo  Extracting RUI FW
+	echo --------------------
+	sleep 3
+	clear
+	echo "#################################################"
+	echo "#"
+	echo "# Disclaimer"
+	echo "#"
+	echo "# Keep your RealmeUI.zip at tools/extract"
+	echo "#"
+	echo "# If done moving zip press ANY KEY to get going"
+	echo "#"
+	echo "##################################################"
+	read -n1 -r key
+	echo -e Searching for RealmeUI Firmware to unpack
+	if [ -f "$fw" ]; then
+		echo -e
+		echo         "ZIP IS THERE; thus extarcing"
+		sleep 4
+		unzip $fw -d RUI && cd RUI
+		if [ -f "$hey" ]; then
+			echo -e "my_heytap is there | RealmeUI confirm"
+		else
+			echo -e "my_heytap partition isn't there | Put RUI FW only"
+		fi
+	fi
+fi
+#10th
+if [ $n -eq 10 ]; then
+	echo -e
+	echo --------------------
+	echo  Exiting...
+	echo --------------------
+	sleep 3
+	exit
 fi
