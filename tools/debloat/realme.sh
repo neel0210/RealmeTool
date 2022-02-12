@@ -51,6 +51,8 @@ adb shell pm uninstall -k --user 0 com.google.android.youtube
 adb shell pm uninstall -k --user 0 com.google.ar.lens
 adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music
 adb shell pm uninstall -k --user 0 com.google.android.keep
+adb shell pm uninstall -k --user 0 com.os.docvault
+adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
 sleep 2
 echo "(--------------------------------------)"
 echo                Microsoft apps
@@ -82,5 +84,9 @@ adb shell pm uninstall -k --user 0 com.oppo.quicksearchbox
 adb shell pm uninstall -k --user 0 com.realme.link
 adb shell pm uninstall -k --user 0 com.coloros.onekeylockscreen
 adb shell pm uninstall -k --user 0 com.coloros.videoeditor
+adb shell pm uninstall -k --user 0 com.realmecomm.app
+adb shell pm uninstall -k --user 0 com.heytap.quickgame
+adb shell pm uninstall -k --user 0 com.realmestore.app
+adb shell pm uninstall -k --user 0 com.heytap.pictorial
 sleep 2
 echo Done okaythnxBye!
