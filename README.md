@@ -33,3 +33,16 @@ List:
 - 5th (`Flashing zip file`)
 - 6th (`Install Magisk`)
 - Much more soon!
+
+# How to use / what to do
+
+  - open terminal  and copy paste below given cmd  
+```yaml
+git clone https://github.com/neel0210/RealmeTool.git && cd RealmeTool && chmod a+x neel.sh && bash tools.sh
+```
+### It will show you Screen like this
+
+<div align="center">
+    <img src="tools/resources/HOWITLOOK.png"/>
+</div>
+
