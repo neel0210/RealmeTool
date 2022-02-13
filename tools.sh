@@ -277,7 +277,7 @@ clear
 		echo flashed
 		echo -e
 		fastboot reboot recovery
-		cd $home	
+		echo	
 	fi
 	if [ $n -eq 2 ]; then
 		echo -e
@@ -295,7 +295,7 @@ clear
 		echo flashed
 		echo -e
 		fastboot reboot recovery
-		cd $home
+		echo
 	fi
 	if [ $n -eq 3 ]; then
 		echo -e
@@ -314,7 +314,7 @@ clear
 		echo flashed
 		echo -e
 		fastboot reboot recovery
-		cd $home
+		echo
 	fi
 	if [ $n -eq 4 ]; then
 		echo -e
@@ -331,7 +331,9 @@ clear
 		echo -e rebooting
 		fastboot reboot recovery
 		echo done
-	fi		
+	fi
+	rm -rf *.img
+	cd $home
 	echo "running script again"
 	sleep 2
 	bash realme.sh
