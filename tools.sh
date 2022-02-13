@@ -299,7 +299,7 @@ clear
 	fi
 	if [ $n -eq 3 ]; then
 		echo -e
-		echo Flashing SHRP by @Ctapchuk
+		echo Flashing SHRP by @logotoy73
 		sleep 3
 		fastboot flash recovery shrp.img
 			echo "You must be in bootloader"
