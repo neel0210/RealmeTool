@@ -2,7 +2,7 @@
 <p align="center">
         <img src="tools/resources/RealmeTool.png" alt="RealmeTool">
         <br>
-    <b>Management tool for Realme Device</b>
+    <b>Management tool for Realme Device | I use it for Realme 6 Pro</b>
         </br>
  </p>
  
