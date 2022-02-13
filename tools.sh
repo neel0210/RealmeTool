@@ -31,7 +31,8 @@ echo "3 = Debloat"
 echo "4 = Install an APK"
 echo "5 = Flash zip in recovery"
 echo "6 = Install Magisk v24"
-echo "7 = Extract RUI Fimrware"
+echo "7 = Install recovery"
+echo "8 = Extract RUI Fimrware"
 echo "10 = exit"
 read n
 # Here we go
@@ -248,6 +249,94 @@ if [ $n -eq 6 ]; then
 fi
 #7th
 if [ $n -eq 7 ]; then
+clear
+	echo --------------------
+	echo    Recovery Menu
+	echo --------------------
+	echo -e "Which recovery do you wanna Install?   | All for A11"
+	sleep 2
+	echo "1 = TWRP"
+	echo "2 = OFOX"
+	echo "3 = SHRP"
+	echo "4 = Reboot to recovery"
+	read n
+	if [ $n -eq 1 ]; then
+		echo -e
+		echo Flashing TWRP by @Ctapchuk
+		sleep 3
+			echo "You must be in bootloader"
+			echo "If youre not then boot to Bootloader"
+			echo "and check below if youre able to see your device"
+			echo "in fastboot devices | If yes then only press ANY KEY to continue"
+		fastboot devices
+		read -n1 -r key
+		cd tools/recoveries
+		tar -xf twrp.img.tar.xz
+		fastboot flash recovery twrp.img
+		echo flashed
+		echo -e
+		fastboot reboot recovery
+		cd $home	
+	fi
+	if [ $n -eq 2 ]; then
+		echo -e
+		echo Flashing OFOX by @Ctapchuk
+		sleep 3
+			echo "You must be in bootloader"
+			echo "If youre not then boot to Bootloader"
+			echo "and check below if youre able to see your device"
+			echo "in fastboot devices | If yes then only press ANY KEY to continue"
+		fastboot devices
+		read -n1 -r key
+		cd tools/recoveries
+		tar -xf ofox.img.tar.xz
+		fastboot flash recovery ofox.img
+		echo flashed
+		echo -e
+		fastboot reboot recovery
+		cd $home
+	fi
+	if [ $n -eq 3 ]; then
+		echo -e
+		echo Flashing SHRP by @Ctapchuk
+		sleep 3
+		fastboot flash recovery shrp.img
+			echo "You must be in bootloader"
+			echo "If youre not then boot to Bootloader"
+			echo "and check below if youre able to see your device"
+			echo "in fastboot devices | If yes then only press ANY KEY to continue"
+		fastboot devices
+		read -n1 -r key
+		cd tools/recoveries
+		tar -xf shrp.img.tar.xz
+		fastboot flash recovery shrp.img
+		echo flashed
+		echo -e
+		fastboot reboot recovery
+		cd $home
+	fi
+	if [ $n -eq 4 ]; then
+		echo -e
+		echo -e Rebooting to recovery in
+		echo 5.....
+		sleep 1
+		echo 4....
+		sleep 1
+		echo 3...
+		sleep 1
+		echo 2
+		sleep 1
+		echo 1
+		echo -e rebooting
+		fastboot reboot recovery
+		echo done
+	fi		
+	echo "running script again"
+	sleep 2
+	bash realme.sh
+fi
+#8
+if [ $n -eq 8 ]; then
 	echo -e
 	echo --------------------
 	echo  Extracting RUI FW
@@ -286,3 +375,7 @@ if [ $n -eq 10 ]; then
 	sleep 3
 	exit
 fi
+
+
+
+
