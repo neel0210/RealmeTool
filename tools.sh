@@ -2,7 +2,8 @@
 #
 #
 # export variables here
-home=$(pwd)
+base=$(pwd)
+output="$home/output"
 platform="tools/platform-tools"
 custom="tools/debloat/custom.sh"
 apk=$(find tools/apk/*.apk)
@@ -10,6 +11,10 @@ zip=$(find tools/zip/*.zip)
 magisk=$(find tools/magisk/*.zip)
 fw=$(find tools/extract/*.zip)
 hey="ffu_tool"
+kernel="https://github.com/neel0210/KKRT_6PRO"
+kpath="tools/kernel"
+KKRT="tools/resources/KKRT.sh"
+build=$(find tools/kernel/CORE/*.zip)
 #
 # Script
 clear
@@ -34,6 +39,7 @@ echo "5 = Flash zip in recovery"
 echo "6 = Install Magisk v24"
 echo "7 = Install recovery"
 echo "8 = Extract RUI Fimrware"
+echo "9 = Brew Kernel | Stable"
 echo "10 = exit"
 read n
 # Here we go
@@ -333,7 +339,7 @@ clear
 		echo done
 	fi
 	rm -rf *.img
-	cd $home
+	cd $base
 	echo "running script again"
 	sleep 2
 	bash realme.sh
@@ -368,6 +374,24 @@ if [ $n -eq 8 ]; then
 			echo -e "my_heytap partition isn't there | Put RUI FW only"
 		fi
 	fi
+fi
+#9th
+if [ $n -eq 9 ]; then
+	mkdir tools/kernel
+	echo -e
+	echo -------------------------
+	echo  Making KAKAROT - Stable
+	echo -------------------------
+	echo -e
+	git clone --depth=1 $kernel $kpath
+	cp $KKRT $kpath
+	cd $kpath
+	bash KKRT.sh
+	cd $base
+	mv $build $output
+	echo done
+	echo cleaning kernel dir
+	rm -rf tools/kernel
 fi
 #10th
 if [ $n -eq 10 ]; then
