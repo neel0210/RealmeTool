@@ -52,7 +52,7 @@ if [ $n -eq 1 ]; then
 	echo ----------------------
 	echo -e "Press Any key to get back to script"
     read -n1 -r key
-	bash realme.sh
+	bash tools.sh
 fi
 # 2nd
 if [ $n -eq 2 ]; then
@@ -85,7 +85,7 @@ if [ $n -eq 2 ]; then
 	fi
 	echo "running script again"
 	sleep 2
-	bash realme.sh
+	bash tools.sh
 fi
 # 3rd
 if [ $n -eq 3 ]; then
@@ -160,7 +160,7 @@ if [ $n -eq 3 ]; then
 	fi
 	echo "running script again"
 	sleep 2
-	bash realme.sh
+	bash tools.sh
 fi
 # 4th
 if [ $n -eq 4 ]; then
@@ -182,7 +182,7 @@ if [ $n -eq 4 ]; then
 	echo -e 
 	echo "running script again"
 	sleep 2
-	bash realme.sh
+	bash tools.sh
 fi
 # 5th
 if [ $n -eq 5 ]; then
@@ -214,7 +214,7 @@ if [ $n -eq 5 ]; then
 	sleep 5
 	echo "running script again"
 	sleep 2
-	bash realme.sh
+	bash tools.sh
 fi
 # 6th
 if [ $n -eq 6 ]; then
@@ -252,7 +252,7 @@ if [ $n -eq 6 ]; then
 	sleep 5
 	echo "running script again"
 	sleep 2
-	bash realme.sh			
+	bash tools.sh			
 fi
 #7th
 if [ $n -eq 7 ]; then
@@ -342,7 +342,7 @@ clear
 	cd $base
 	echo "running script again"
 	sleep 2
-	bash realme.sh
+	bash tools.sh
 fi
 #8
 if [ $n -eq 8 ]; then
