@@ -32,6 +32,9 @@ List:
 - 4th (`Install an APK`)
 - 5th (`Flashing zip file`)
 - 6th (`Install Magisk`)
+- 7th (`Install Recovery`)
+- 8th (`Extract RealmeUI fimrware | WIP`)
+- 9th (`Make KAKAROT Kernel | Stable`)
 - Much more soon!
 
 # How to use / what to do
