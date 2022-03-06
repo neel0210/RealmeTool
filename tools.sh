@@ -98,7 +98,8 @@ if [ $n -eq 3 ]; then
 	sleep 2
 	echo "1 = RealmeUI 1-2"
 	echo "2 = Google Bloat (Mostly all)"
-	echo "3 = Custom bloat (Add your own apps list)"
+	echo "3 = Secondary GAPPS debloater --  No PHONE, MSG, CONTACTS"
+	echo "4 = Custom bloat (Add your own apps list)"
 	read n
 	if [ $n -eq 1 ]; then
 		echo -e
@@ -128,35 +129,51 @@ if [ $n -eq 3 ]; then
         bash tools/debloat/gapps.sh
 		echo done
 	fi
-	if [ $n -eq 3 ]; then
+	if [ $n -eq 2 ]; then
 		echo -e
 		echo --------------------
-		echo       Custom
+		echo      Gapps
 		echo --------------------
-		echo "# You choose Custom script to debloat apps"
-		echo "# Few things to keep in mind"
-		echo "# You need to edit script on your own it easy AF, Just read this carefully"
-		echo -e "1 Go to tools/debloat/ and make a copy of temp_custom.sh and rename it to custom.sh"
-		echo "2 open it with any text editor app and add your app's package name and make a whole list like that"
-		echo "3 save it and get back here"
-		echo
-		echo "                         Once done then press Any key to run your own custom script"
+		echo -e "You choose Google apps to be debloated"
+ 		echo 
+	    echo "Press Any key to start debloatation"
         read -n1 -r key
-        echo -e "checking if file is there"
-        sleep 4
-        echo -e
-       		if [ -f "$custom" ]; then
-       			echo -----------------------------------------------------
-				echo         "Custom.sh IS THERE; thus starting"
-       			echo -----------------------------------------------------				
-				sleep 4
-				bash tools/debloat/custom.sh
-			else
-       			echo -----------------------------------------------------				
-				echo    "Custom.sh is NOT THERE; follow steps properly"
-       			echo -----------------------------------------------------				
-				sleep 4
-			fi
+        echo -e Now sit back and relax
+        sleep 3
+        bash tools/debloat/gapps.sh
+		echo done
+	fi
+
+	if [ $n -eq 4 ]; then
+	echo -e
+	echo --------------------
+	echo       Custom
+	echo --------------------
+	echo "# You choose Custom script to debloat apps"
+	echo "# Few things to keep in mind"
+	echo "# You need to edit script on your own it easy AF, Just read this carefully"
+	echo -e "1 Go to tools/debloat/ and make a copy of temp_custom.sh and rename it to custom.sh"
+	echo "2 open it with any text editor app and add your app's package name and make a whole list like that"
+	echo "3 save it and get back here"
+	echo
+	echo "                         Once done then press Any key to run your own custom script"
+    read -n1 -r key
+    echo -e "checking if file is there"
+    sleep 4
+    echo -e
+    	if [ -f "$custom" ]; then
+    		echo -----------------------------------------------------
+			echo         "Custom.sh IS THERE; thus starting"
+       		echo -----------------------------------------------------				
+			sleep 4
+			bash tools/debloat/custom.sh
+		else
+       		echo -----------------------------------------------------				
+			echo    "Custom.sh is NOT THERE; follow steps properly"
+       		echo -----------------------------------------------------				
+			sleep 4
+		fi	
+
 	fi
 	echo "running script again"
 	sleep 2
@@ -267,6 +284,10 @@ clear
 	echo "3 = SHRP"
 	echo "4 = Reboot to recovery"
 	read n
+	echo flashing VBMETA
+	cd tools/recoveries
+	fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
+	cd ../..
 	if [ $n -eq 1 ]; then
 		echo -e
 		echo Flashing TWRP by @Ctapchuk

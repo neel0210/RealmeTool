@@ -1,0 +1,23 @@
+# adb shell pm uninstall -k --user 0 --user 0 
+# AOSP Keyboard -- com.android.inputmethod.latin
+# AOSP Bookprovider -- com.android.bookmarkprovider
+# Lineage Browser -- org.lineageos.jelly
+
+# If not your primary then you can remove call, message and contacts too
+# com.google.android.apps.messaging
+# com.google.android.dailer
+# com.google.android.contacts
+# org.lineageos.audiofx
+# com.android.calculator2
+# com.android.calendar
+
+adb shell pm uninstall -k --user 0 --user 0 com.android.inputmethod.latin
+adb shell pm uninstall -k --user 0 --user 0 com.android.bookmarkprovider
+adb shell pm uninstall -k --user 0 --user 0 org.lineageos.jelly
+adb shell pm uninstall -k --user 0 --user 0 com.google.android.apps.messaging
+adb shell pm uninstall -k --user 0 --user 0 com.google.android.dailer
+adb shell pm uninstall -k --user 0 --user 0 com.google.android.contacts
+adb shell pm uninstall -k --user 0 --user 0 org.lineageos.audiofx
+adb shell pm uninstall -k --user 0 --user 0 com.android.calculator2
+adb shell pm uninstall -k --user 0 --user 0 com.android.calendar
+#
