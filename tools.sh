@@ -33,7 +33,7 @@ echo -e
 }
 banner
 echo "Select"
-echo "1 = Check adb connection"
+echo "1 = Confirm ADB"
 echo "2 = Boot to fastboot or recovery"
 echo "3 = Debloat"
 echo "4 = Install an APK"
@@ -46,7 +46,15 @@ echo "10 = exit"
 read n
 # Here we go
 if [ $n -eq 1 ]; then
-	echo -e
+	adb_check=$(which adb) 
+	if [ "$?" == 0 ]; then
+	    echo -e "ADB is present\n"
+	else
+		echo -e "ADB is not installed ; thus installing"
+        apt-get install adb -y
+        apt-get install fastboot -y
+        apt-get install ruby-full -y
+	fi
 	echo Checking adb device if present
 	echo -e
 	echo -----------------------
@@ -58,7 +66,7 @@ if [ $n -eq 1 ]; then
 fi
 # 2nd
 if [ $n -eq 2 ]; then
-		clear
+	clear
 	echo --------------------
 	echo      Boot menu
 	echo --------------------
