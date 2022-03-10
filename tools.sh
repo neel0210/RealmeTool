@@ -18,18 +18,20 @@ build=$(find tools/kernel/CORE/*.zip)
 #
 # Script
 clear
-echo ""
-echo ""
-echo " ____            _                  _____           _ "
-echo "|  _ \ ___  __ _| |_ __ ___   ___  |_   _|__   ___ | |"
-echo "| |_) / _ \/ _       _   _ \ / _ \   | |/ _ \ / _ \| |"
-echo "|  _ <  __/ (_| | | | | | | |  __/   | | (_) | (_) | |"
-echo "|_| \_\___|\__,_|_|_| |_| |_|\___|   |_|\___/ \___/|_|"
-echo "                                                      "
-echo "                                                     "
-echo " Realme Utility Script                               "
-echo "                       coded by Neel0210             "
-echo "                                                     "
+banner () {
+
+echo -e "\e[1;93m
+
+ ____            _                  _____           _ 
+|  _ \ ___  __ _| |_ __ ___   ___  |_   _|__   ___ | |
+| |_) / _ \/ _       _   _ \ / _ \   | |/ _ \ / _ \| |
+|  _ <  __/ (_| | | | | | | |  __/   | | (_) | (_) | |
+|_| \_\___|\__,_|_|_| |_| |_|\___|   |_|\___/ \___/|_|
+\e[0m"
+echo -e "\e[93mMade with ❤️  by \e[1;94m Neel0210\e[0m"
+echo -e
+}
+banner
 echo "Select"
 echo "1 = Check adb connection"
 echo "2 = Boot to fastboot or recovery"
