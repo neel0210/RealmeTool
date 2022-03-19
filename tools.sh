@@ -18,20 +18,22 @@ build=$(find tools/kernel/CORE/*.zip)
 #
 # Script
 clear
-echo ""
-echo ""
-echo " ____            _                  _____           _ "
-echo "|  _ \ ___  __ _| |_ __ ___   ___  |_   _|__   ___ | |"
-echo "| |_) / _ \/ _       _   _ \ / _ \   | |/ _ \ / _ \| |"
-echo "|  _ <  __/ (_| | | | | | | |  __/   | | (_) | (_) | |"
-echo "|_| \_\___|\__,_|_|_| |_| |_|\___|   |_|\___/ \___/|_|"
-echo "                                                      "
-echo "                                                     "
-echo " Realme Utility Script                               "
-echo "                       coded by Neel0210             "
-echo "                                                     "
+banner () {
+
+echo -e "\e[1;93m
+
+ ____            _                  _____           _ 
+|  _ \ ___  __ _| |_ __ ___   ___  |_   _|__   ___ | |
+| |_) / _ \/ _       _   _ \ / _ \   | |/ _ \ / _ \| |
+|  _ <  __/ (_| | | | | | | |  __/   | | (_) | (_) | |
+|_| \_\___|\__,_|_|_| |_| |_|\___|   |_|\___/ \___/|_|
+\e[0m"
+echo -e "\e[93mMade with ❤️  by \e[1;94m Neel0210\e[0m"
+echo -e
+}
+banner
 echo "Select"
-echo "1 = Check adb connection"
+echo "1 = Confirm ADB"
 echo "2 = Boot to fastboot or recovery"
 echo "3 = Debloat"
 echo "4 = Install an APK"
@@ -44,7 +46,15 @@ echo "10 = exit"
 read n
 # Here we go
 if [ $n -eq 1 ]; then
-	echo -e
+	adb_check=$(which adb) 
+	if [ "$?" == 0 ]; then
+	    echo -e "ADB is present\n"
+	else
+		echo -e "ADB is not installed ; thus installing"
+        apt-get install adb -y
+        apt-get install fastboot -y
+        apt-get install ruby-full -y
+	fi
 	echo Checking adb device if present
 	echo -e
 	echo -----------------------
@@ -56,7 +66,7 @@ if [ $n -eq 1 ]; then
 fi
 # 2nd
 if [ $n -eq 2 ]; then
-		clear
+	clear
 	echo --------------------
 	echo      Boot menu
 	echo --------------------
