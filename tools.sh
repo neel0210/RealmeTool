@@ -11,6 +11,7 @@ zip=$(find tools/zip/*.zip)
 magisk=$(find tools/magisk/*.zip)
 fw=$(find tools/extract/*.zip)
 hey="ffu_tool"
+log=$(find tools/log/*.txt) && rm -rf $log
 kernel="https://github.com/neel0210/KKRT_6PRO"
 kpath="tools/kernel"
 KKRT="tools/resources/KKRT.sh"
@@ -42,7 +43,8 @@ echo "6 = Install Magisk v24"
 echo "7 = Install recovery"
 echo "8 = Extract RUI Fimrware"
 echo "9 = Brew Kernel | Stable"
-echo "10 = exit"
+echo "10 = Logcat"
+echo "11 = exit"
 read n
 # Here we go
 if [ $n -eq 1 ]; then
@@ -427,13 +429,21 @@ fi
 #10th
 if [ $n -eq 10 ]; then
 	echo -e
+	echo -e Taking LOG
+	adb shell logcat > tools/log/Logcat.txt
+	read -p $'\n\e[93;1mDo you want to stop and preview it \e[1;97m (y/N) \e[93;1m? : \e[1;91m' yn
+	case $yn in
+  [Yy]* ) clear; cat tools/log/*txt;;
+  [Nn]* ) bash tools.sh;;
+  * ) bash tools.sh;;
+esac
+fi
+#
+if [ $n -eq 11 ]; then
+	echo -e
 	echo --------------------
 	echo  Exiting...
 	echo --------------------
 	sleep 3
 	exit
 fi
-
-
-
-
