@@ -77,6 +77,8 @@ adb shell pm uninstall -k --user 0 com.realmecomm.app
 adb shell pm uninstall -k --user 0 com.heytap.quickgame
 adb shell pm uninstall -k --user 0 com.realmestore.app
 adb shell pm uninstall -k --user 0 com.heytap.pictorial
+adb shell pm uninstall -k --user 0 com.google.android.calculator
+adb shell pm uninstall -k --user 0 com.google.android.calendar
 #adb shell pm uninstall -k --user 0 
 #adb shell pm uninstall -k --user 0 
 #echo done
