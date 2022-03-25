@@ -297,9 +297,9 @@ clear
 	echo "4 = Reboot to recovery"
 	read n
 	echo flashing VBMETA
-	cd tools/recoveries
+	cd tools/recoveries/vb
 	fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
-	cd ../..
+	cd ../../..
 	if [ $n -eq 1 ]; then
 		echo -e
 		echo Flashing TWRP by @Ctapchuk
