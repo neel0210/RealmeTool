@@ -209,6 +209,7 @@ if [ $n -eq 4 ]; then
 	echo -e
 	echo -e "Found APKs: $apk"
 	echo -e 
+	adb install $apk
 	echo "running script again"
 	sleep 2
 	bash tools.sh
