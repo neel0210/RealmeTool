@@ -141,18 +141,18 @@ if [ $n -eq 3 ]; then
         bash tools/debloat/gapps.sh
 		echo done
 	fi
-	if [ $n -eq 2 ]; then
+	if [ $n -eq 3 ]; then
 		echo -e
 		echo --------------------
-		echo      Gapps
+		echo     Sec debloat
 		echo --------------------
-		echo -e "You choose Google apps to be debloated"
+		echo -e "You choose Secondary debloat"
  		echo 
 	    echo "Press Any key to start debloatation"
         read -n1 -r key
         echo -e Now sit back and relax
         sleep 3
-        bash tools/debloat/gapps.sh
+        bash tools/debloat/sec.sh
 		echo done
 	fi
 
