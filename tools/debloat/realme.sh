@@ -95,5 +95,8 @@ adb shell pm uninstall -k --user 0 com.realmecomm.app
 adb shell pm uninstall -k --user 0 com.heytap.quickgame
 adb shell pm uninstall -k --user 0 com.realmestore.app
 adb shell pm uninstall -k --user 0 com.heytap.pictorial
+adb shell pm uninstall --user 0 com.coloros.focusmode
+adb shell pm uninstall --user 0 com.coloros.calculator
+adb shell pm uninstall --user 0 com.google.android.apps.googleassistant
 sleep 2
 echo Done okaythnxBye!

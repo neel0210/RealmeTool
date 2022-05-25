@@ -81,6 +81,16 @@ adb shell pm uninstall -k --user 0 com.google.android.calculator
 adb shell pm uninstall -k --user 0 com.google.android.calendar
 adb shell pm uninstall -k --user 0 com.os.docvault
 adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
+adb shell pm uninstall --user 0 com.google.android.apps.googleassistant
+sleep 2
+echo "(--------------------------------------)"
+echo                 Realme apps
+echo "(--------------------------------------)"
+adb shell pm uninstall --user 0 com.coloros.focusmode
+adb shell pm uninstall --user 0 com.coloros.calculator
+adb shell pm uninstall --user 0 com.google.soundrecorder
+adb shell pm uninstall --user 0 com.nearme.atlas
+adb shell pm uninstall --user 0 com.oppo.operationManual
 sleep 2
 echo "(--------------------------------------)"
 echo                 AOSP apps
@@ -94,6 +104,8 @@ adb shell pm uninstall -k --user 0 com.lineageos.eleven
 adb shell pm uninstall -k --user 0 com.android.dialer
 adb shell pm uninstall -k --user 0 com.lineageos.etar
 adb shell pm uninstall -k --user 0 com.android.gallery3d
-#adb shell pm uninstall -k --user 0 
-#adb shell pm uninstall -k --user 0 
-#echo done
+# adb shell pm uninstall --user 0 
+# adb shell pm uninstall --user 0
+# adb shell pm uninstall -k --user 0 
+# adb shell pm uninstall -k --user 0 
+echo done

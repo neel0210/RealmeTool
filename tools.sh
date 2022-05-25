@@ -44,10 +44,12 @@ echo "7 = Install recovery"
 echo "8 = Extract RUI Fimrware"
 echo "9 = Brew Kernel | Stable"
 echo "10 = Logcat"
-echo "11 = exit"
+echo "11 = Git push"
+echo "12 = exit"
 read n
 # Here we go
 if [ $n -eq 1 ]; then
+	echo -e ""
 	adb_check=$(which adb) 
 	if [ "$?" == 0 ]; then
 	    echo -e "ADB is present\n"
@@ -69,6 +71,7 @@ fi
 # 2nd
 if [ $n -eq 2 ]; then
 	clear
+	echo -e ""
 	echo --------------------
 	echo      Boot menu
 	echo --------------------
@@ -102,7 +105,7 @@ fi
 # 3rd
 if [ $n -eq 3 ]; then
 	clear
-	echo -e
+	echo -e ""
 	echo --------------------
 	echo      Debloat
 	echo --------------------
@@ -157,7 +160,7 @@ if [ $n -eq 3 ]; then
 	fi
 
 	if [ $n -eq 4 ]; then
-	echo -e
+	echo -e ""
 	echo --------------------
 	echo       Custom
 	echo --------------------
@@ -193,7 +196,7 @@ if [ $n -eq 3 ]; then
 fi
 # 4th
 if [ $n -eq 4 ]; then
-	echo -e
+	echo -e ""
 	echo ---------------------------
 	echo      Installing an APK
 	echo ---------------------------
@@ -216,7 +219,7 @@ if [ $n -eq 4 ]; then
 fi
 # 5th
 if [ $n -eq 5 ]; then
-	echo -e
+	echo -e ""
 	echo ---------------------------
 	echo      Flashing zip
 	echo ---------------------------
@@ -248,7 +251,7 @@ if [ $n -eq 5 ]; then
 fi
 # 6th
 if [ $n -eq 6 ]; then
-	echo -e
+	echo -e ""
 	echo ---------------------------
 	echo      Flashing Magisk
 	echo ---------------------------
@@ -287,6 +290,7 @@ fi
 #7th
 if [ $n -eq 7 ]; then
 clear
+echo -e ""
 	echo --------------------
 	echo    Recovery Menu
 	echo --------------------
@@ -380,7 +384,7 @@ clear
 fi
 #8
 if [ $n -eq 8 ]; then
-	echo -e
+	echo -e ""
 	echo --------------------
 	echo  Extracting RUI FW
 	echo --------------------
@@ -429,7 +433,7 @@ if [ $n -eq 9 ]; then
 fi
 #10th
 if [ $n -eq 10 ]; then
-	echo -e
+	echo -e " "
 	echo -e Taking LOG
 	adb shell logcat > tools/log/Logcat.txt
 	read -p $'\n\e[93;1mDo you want to stop and preview it \e[1;97m (y/N) \e[93;1m? : \e[1;91m' yn
@@ -441,6 +445,14 @@ esac
 fi
 #
 if [ $n -eq 11 ]; then
+	echo -e " "
+	git add .
+	git commit
+	git push
+	echo done
+fi
+#
+if [ $n -eq 12 ]; then
 	echo -e
 	echo --------------------
 	echo  Exiting...
