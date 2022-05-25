@@ -16,6 +16,7 @@ kernel="https://github.com/neel0210/KKRT_6PRO"
 kpath="tools/kernel"
 KKRT="tools/resources/KKRT.sh"
 build=$(find tools/kernel/CORE/*.zip)
+device="Realme 6 Pro // RMX2061"
 #
 # Script
 clear
@@ -30,7 +31,8 @@ echo -e "\e[1;93m
 |_| \_\___|\__,_|_|_| |_| |_|\___|   |_|\___/ \___/|_|
 \e[0m"
 echo -e "\e[93mMade with ❤️  by \e[1;94m Neel0210\e[0m"
-echo -e
+echo
+echo -e "		for $device"
 }
 banner
 echo "Select"
@@ -45,7 +47,8 @@ echo "8 = Extract RUI Fimrware"
 echo "9 = Brew Kernel | Stable"
 echo "10 = Logcat"
 echo "11 = Git push"
-echo "12 = exit"
+echo "12 = Build AOSPs"
+echo "13 = exit"
 read n
 # Here we go
 if [ $n -eq 1 ]; then
@@ -79,6 +82,7 @@ if [ $n -eq 2 ]; then
 	sleep 2
 	echo "1 = Reboot to Bootloader"
 	echo "2 = Reboot to recovery"
+	echo "3 = Back to main menu"
 	read n
 	if [ $n -eq 1 ]; then
 		echo -e
@@ -98,6 +102,13 @@ if [ $n -eq 2 ]; then
 		adb devices
 		echo Booted to recovery
 	fi
+	if [ $n -eq 3 ]; then
+		echo -e " "
+		echo ---------------------------
+		echo      Boot to Main menu
+		echo ---------------------------
+		bash tools.sh
+	fi
 	echo "running script again"
 	sleep 2
 	bash tools.sh
@@ -115,6 +126,7 @@ if [ $n -eq 3 ]; then
 	echo "2 = Google Bloat (Mostly all)"
 	echo "3 = Secondary GAPPS debloater --  No PHONE, MSG, CONTACTS"
 	echo "4 = Custom bloat (Add your own apps list)"
+	echo "5 = Go to Main Menu"	
 	read n
 	if [ $n -eq 1 ]; then
 		echo -e
@@ -158,7 +170,6 @@ if [ $n -eq 3 ]; then
         bash tools/debloat/sec.sh
 		echo done
 	fi
-
 	if [ $n -eq 4 ]; then
 	echo -e ""
 	echo --------------------
@@ -189,6 +200,13 @@ if [ $n -eq 3 ]; then
 			sleep 4
 		fi	
 
+	fi
+	if [ $n -eq 5 ]; then
+		echo -e " "
+		echo ---------------------------
+		echo      Boot to Main menu
+		echo ---------------------------
+		bash tools.sh
 	fi
 	echo "running script again"
 	sleep 2
@@ -300,6 +318,7 @@ echo -e ""
 	echo "2 = OFOX"
 	echo "3 = SHRP"
 	echo "4 = Reboot to recovery"
+	echo "5 = Go to Main Menu"
 	read n
 	echo flashing VBMETA
 	cd tools/recoveries/vb
@@ -375,6 +394,13 @@ echo -e ""
 		echo -e rebooting
 		fastboot reboot recovery
 		echo done
+	fi
+	if [ $n -eq 5 ]; then
+		echo -e " "
+		echo ---------------------------
+		echo      Boot to Main menu
+		echo ---------------------------
+		bash tools.sh
 	fi
 	rm -rf *.img
 	cd $base
@@ -460,6 +486,25 @@ if [ $n -eq 11 ]; then
 fi
 #
 if [ $n -eq 12 ]; then
+	echo -e " "
+	echo ------------------------------
+	echo    Which AOSP you Gonna Buid
+	echo ------------------------------
+	echo -e "Which recovery do you wanna Install?   | All for A11"
+	sleep 2
+	echo "1 = Awaken"
+	echo "2 = Spark"
+	echo "3 = Cherish"
+	echo "4 = Octavi-OS"
+	echo "4 = Project Elixir"
+	echo "5 = Go to Main Menu"
+	read n
+	if [ $n -eq 1 ]; then
+		echo " TO DO"
+	fi
+fi
+#
+if [ $n -eq 13 ]; then
 	echo -e
 	echo --------------------
 	echo  Exiting...
