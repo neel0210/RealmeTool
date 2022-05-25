@@ -81,6 +81,19 @@ adb shell pm uninstall -k --user 0 com.google.android.calculator
 adb shell pm uninstall -k --user 0 com.google.android.calendar
 adb shell pm uninstall -k --user 0 com.os.docvault
 adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
+sleep 2
+echo "(--------------------------------------)"
+echo                 AOSP apps
+echo "(--------------------------------------)"
+adb shell pm uninstall -k --user 0 com.grapheneos.apps
+adb shell pm uninstall -k --user 0 com.android.bookmarkprovider
+adb shell pm uninstall -k --user 0 com.android.calculator2
+adb shell pm uninstall -k --user 0 org.lineageos.jelly
+adb shell pm uninstall -k --user 0 com.android.contacts
+adb shell pm uninstall -k --user 0 com.lineageos.eleven
+adb shell pm uninstall -k --user 0 com.android.dialer
+adb shell pm uninstall -k --user 0 com.lineageos.etar
+adb shell pm uninstall -k --user 0 com.android.gallery3d
 #adb shell pm uninstall -k --user 0 
 #adb shell pm uninstall -k --user 0 
 #echo done

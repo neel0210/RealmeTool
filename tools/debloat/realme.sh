@@ -53,6 +53,8 @@ adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music
 adb shell pm uninstall -k --user 0 com.google.android.keep
 adb shell pm uninstall -k --user 0 com.os.docvault
 adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
+adb shell pm uninstall -k --user 0 com.google.android.apps.googleassistant
+adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.files
 sleep 2
 echo "(--------------------------------------)"
 echo                Microsoft apps
@@ -66,6 +68,11 @@ echo "(----------------------------------------------------------)"
 echo   Realme apps, ignore if u dont have redmi device and wait 
 echo "(----------------------------------------------------------)"
 adb shell pm uninstall -k --user 0 com.heytap.market
+adb shell pm uninstall -k --user 0 com.coloros.calculator
+adb shell pm uninstall -k --user 0 com.coloros.gamespaceui
+adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
+adb shell pm uninstall -k --user 0 com.oppo.music
+adb shell pm uninstall -k --user 0 com.coloros.soundrecorder
 adb shell pm uninstall -k --user 0 com.opos.cs
 adb shell pm uninstall -k --user 0 com.heytap.browser
 adb shell pm uninstall -k --user 0 com.heytap.music
