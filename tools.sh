@@ -3,6 +3,7 @@
 #
 # export variables here
 base=$(pwd)
+tools=$base/tools
 output="$home/output"
 platform="tools/platform-tools"
 custom="tools/debloat/custom.sh"
@@ -16,7 +17,8 @@ kernel="https://github.com/neel0210/KKRT_6PRO"
 kpath="tools/kernel"
 KKRT="tools/resources/KKRT.sh"
 build=$(find tools/kernel/CORE/*.zip)
-device="Realme 6 Pro // RMX2061"
+device="Realme 6 Pro // RMX2061."
+common=`$base/tools/AOSP/common.sh`
 #
 # Script
 clear
@@ -487,21 +489,75 @@ fi
 #
 if [ $n -eq 12 ]; then
 	echo -e " "
+	sleep 1
+	mkdir AOSP && cd AOSP
 	echo ------------------------------
-	echo    Which AOSP you Gonna Buid
+	echo   Which AOSP you wanna Buid
 	echo ------------------------------
-	echo -e "Which recovery do you wanna Install?   | All for A11"
-	sleep 2
+	echo -e "Which recovery do you wanna Install? | All for A12"
+	sleep 1
 	echo "1 = Awaken"
 	echo "2 = Spark"
 	echo "3 = Cherish"
 	echo "4 = Octavi-OS"
-	echo "4 = Project Elixir"
-	echo "5 = Go to Main Menu"
+	echo "5 = Project Elixir"
+	echo "6 = Fluid"
+	echo "7 = Go to Main Menu"
 	read n
 	if [ $n -eq 1 ]; then
-		echo " TO DO"
+		echo " You have selected Awaken for $device"
+		echo -e " Syncing common trees"
+		echo "syncing needed trees for $device"
+		mkdir Awaken && cd Awaken
+		bash $base/tools/AOSP/Awaken.sh
+		bash $common
+		echo "Done"
 	fi
+	if [ $n -eq 2 ]; then
+		echo " You have selected Spark for $device"
+		echo -e " Syncing common trees"
+		echo "syncing needed trees for $device"
+		mkdir Spark && cd Spark
+		bash $base/tools/AOSP/Spark.sh
+		bash $common
+		echo "Done"
+	fi
+	if [ $n -eq 3 ]; then
+		echo " You have selected Cherish for $device"
+		echo -e " Syncing common trees"
+		echo "syncing needed trees for $device"
+		mkdir Cherish && cd Cherish
+		bash $base/tools/AOSP/Cherish.sh
+		bash $common
+		echo "Done"
+	fi
+	if [ $n -eq 4 ]; then
+		echo " You have selected Octavi for $device"
+		echo -e " Syncing common trees"
+		echo "syncing needed trees for $device"
+		mkdir Octavi && cd Octavi
+		bash $base/tools/AOSP/Octavi.sh
+		bash $common
+		echo "Done"
+	fi
+	if [ $n -eq 5 ]; then
+		echo " You have selected Elixir for $device"
+		echo -e " Syncing common trees"
+		echo "syncing needed trees for $device"
+		mkdir Elixir && cd Elixir
+		bash $base/tools/AOSP/Elixir.sh
+		bash $common
+		echo "Done"
+	fi
+	if [ $n -eq 6 ]; then
+		echo " You have selected Fluid for $device"
+		echo -e " Syncing common trees"
+		echo "syncing needed trees for $device"
+		mkdir Fluid && cd Fluid
+		bash $base/tools/AOSP/Fluid.sh
+		bash $common
+		echo "Done"
+	fi		
 fi
 #
 if [ $n -eq 13 ]; then
@@ -512,3 +568,4 @@ if [ $n -eq 13 ]; then
 	sleep 3
 	exit
 fi
+#
