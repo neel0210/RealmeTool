@@ -41,7 +41,7 @@ List:
 
   - open terminal  and copy paste below given cmd  
 ```yaml
-git clone https://github.com/neel0210/RealmeTool.git && cd RealmeTool && chmod a+x neel.sh && bash tools.sh
+git clone https://github.com/neel0210/RealmeTool.git && cd RealmeTool && chmod a+x tools.sh && bash tools.sh
 ```
 ### It will show you Screen like this
 
