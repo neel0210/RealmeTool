@@ -449,7 +449,14 @@ if [ $n -eq 11 ]; then
 	git add .
 	git commit
 	git push
-	echo done
+	echo -e " "
+	echo --------------------------------------------
+	echo  Done pushing to git
+	echo 
+	echo Can be found at:
+	echo https://github.com/neel0210/RealmeTool
+	echo
+	echo -------------------------------------------
 fi
 #
 if [ $n -eq 12 ]; then
