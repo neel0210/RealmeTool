@@ -54,6 +54,23 @@ adb shell pm uninstall -k --user 0 com.google.android.keep
 adb shell pm uninstall -k --user 0 com.google.android.contacts 
 adb shell pm uninstall -k --user 0 com.google.android.apps.messaging
 adb shell pm uninstall -k --user 0 com.google.android.dialer
+adb shell pm uninstall -k --user 0 com.google.android.calculator
+adb shell pm uninstall -k --user 0 com.google.android.calendar
+adb shell pm uninstall -k --user 0 com.os.docvault
+adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
+adb shell pm uninstall --user 0 com.google.android.apps.googleassistant
+adb shell pm uninstall -k --user 0 com.google.android.projection.gearhead
+adb shell pm uninstall -k --user 0 com.google.android.setupwizard
+adb shell pm uninstall -k --user 0 com.google.ar.core
+adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.files
+adb shell pm uninstall -k --user 0 com.google.android.gms.location.history
+adb shell pm uninstall -k --user 0 com.google.android.apps.podcasts
+adb shell pm uninstall -k --user 0 com.google.android.apps.magazines
+adb shell pm uninstall -k --user 0 com.google.android.apps.subscriptions.red
+sleep 2
+echo "(--------------------------------------)"
+echo                 Realme apps
+echo "(--------------------------------------)"
 adb shell pm uninstall -k --user 0 com.heytap.market
 adb shell pm uninstall -k --user 0 com.opos.cs
 adb shell pm uninstall -k --user 0 com.heytap.browser
@@ -77,20 +94,15 @@ adb shell pm uninstall -k --user 0 com.realmecomm.app
 adb shell pm uninstall -k --user 0 com.heytap.quickgame
 adb shell pm uninstall -k --user 0 com.realmestore.app
 adb shell pm uninstall -k --user 0 com.heytap.pictorial
-adb shell pm uninstall -k --user 0 com.google.android.calculator
-adb shell pm uninstall -k --user 0 com.google.android.calendar
-adb shell pm uninstall -k --user 0 com.os.docvault
-adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
-adb shell pm uninstall --user 0 com.google.android.apps.googleassistant
-sleep 2
-echo "(--------------------------------------)"
-echo                 Realme apps
-echo "(--------------------------------------)"
 adb shell pm uninstall --user 0 com.coloros.focusmode
 adb shell pm uninstall --user 0 com.coloros.calculator
 adb shell pm uninstall --user 0 com.google.soundrecorder
 adb shell pm uninstall --user 0 com.nearme.atlas
 adb shell pm uninstall --user 0 com.oppo.operationManual
+adb shell pm uninstall -k --user 0 in.amazon.mShop.android.shopping
+adb shell pm uninstall -k --user 0 com.android.fmradio
+adb shell pm uninstall -k --user 0 com.coloros.childrenspace
+adb shell pm uninstall -k --user 0 com.coloros.gamespaceui
 sleep 2
 echo "(--------------------------------------)"
 echo                 AOSP apps
@@ -107,5 +119,5 @@ adb shell pm uninstall -k --user 0 com.android.gallery3d
 # adb shell pm uninstall --user 0 
 # adb shell pm uninstall --user 0
 # adb shell pm uninstall -k --user 0 
-# adb shell pm uninstall -k --user 0 
+# adb shell pm uninstall -k --user 0
 echo done

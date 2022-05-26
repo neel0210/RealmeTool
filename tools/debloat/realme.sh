@@ -98,5 +98,14 @@ adb shell pm uninstall -k --user 0 com.heytap.pictorial
 adb shell pm uninstall --user 0 com.coloros.focusmode
 adb shell pm uninstall --user 0 com.coloros.calculator
 adb shell pm uninstall --user 0 com.google.android.apps.googleassistant
+adb shell pm uninstall --user 0 com.coloros.focusmode
+adb shell pm uninstall --user 0 com.coloros.calculator
+adb shell pm uninstall --user 0 com.google.soundrecorder
+adb shell pm uninstall --user 0 com.nearme.atlas
+adb shell pm uninstall --user 0 com.oppo.operationManual
+adb shell pm uninstall -k --user 0 in.amazon.mShop.android.shopping
+adb shell pm uninstall -k --user 0 com.android.fmradio
+adb shell pm uninstall -k --user 0 com.coloros.childrenspace
+adb shell pm uninstall -k --user 0 com.coloros.gamespaceui
 sleep 2
 echo Done okaythnxBye!
