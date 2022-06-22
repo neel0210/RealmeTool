@@ -55,6 +55,7 @@ adb shell pm uninstall -k --user 0 com.os.docvault
 adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user
 adb shell pm uninstall -k --user 0 com.google.android.apps.googleassistant
 adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.files
+adb shell pm uninstall -k --user 0 com.google.android.accessibility.soundamplifier
 sleep 2
 echo "(--------------------------------------)"
 echo                Microsoft apps

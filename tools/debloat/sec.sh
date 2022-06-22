@@ -36,6 +36,7 @@ echo "(--------------------------------------)"
 echo                 Google apps
 echo "(--------------------------------------)"
 adb shell pm uninstall -k --user 0 com.android.chrome
+adb shell pm uninstall -k --user 0 com.google.android.accessibility.soundamplifier
 adb shell pm uninstall -k --user 0 com.google.android.youtube
 adb shell pm uninstall -k --user 0 com.google.android.tts
 adb shell pm uninstall -k --user 0 com.google.android.googlequicksearchbox

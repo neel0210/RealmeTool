@@ -52,4 +52,5 @@ adb shell pm uninstall -k --user 0 com.google.ar.lens
 adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music
 adb shell pm uninstall -k --user 0 com.google.android.keep
 adb shell pm uninstall -k --user 0 com.google.android.feedback
+adb shell pm uninstall -k --user 0 com.google.android.accessibility.soundamplifier
 echo done
