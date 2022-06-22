@@ -7,7 +7,6 @@ tools=$base/tools
 output="$home/output"
 platform="tools/platform-tools"
 custom="tools/debloat/custom.sh"
-apk=$(find tools/apk/*.apk)
 zip=$(find tools/zip/*.zip)
 magisk=$(find tools/magisk/*.zip)
 fw=$(find tools/extract/*.zip)
@@ -221,21 +220,32 @@ if [ $n -eq 4 ]; then
 	echo      Installing an APK
 	echo ---------------------------
 	echo -e
-	echo "#  Disclaimer"
+	mkdir APK
+	echo "#       Steps"
 	echo "#"
-	echo "# Put your APKs in tools/apk/ Folder"
+	echo "# Put your .apk in APK Folder"
+	echo "# Once done press anykey to get going"
 	echo "#"
-	echo -e
-	echo -e "                   If done press ANY KEY to get going"
 	read -n1 -r key
-	echo -e Searching for available APKs
-	echo -e
-	echo -e "Found APKs: $apk"
-	echo -e 
-	adb install $apk
-	echo "running script again"
-	sleep 2
-	bash tools.sh
+	if [ -f APK/*apk ];
+	then
+		mv APK/*.apk ./tools/apk/
+		apk=$(find tools/apk/*.apk)
+		echo -e "Found APKs: $apk"
+		echo " "
+		echo "If this is the apk you want to install press any key else press CTRL+C" 
+		read -n1 -r key
+		echo Installing $apk
+		adb install $apk
+		echo "running script again"
+		sleep 2
+		rm -rf APK
+		bash tools.sh
+	else
+		echo "# NO APK FOUND in APK folder, add and Re-run Script"
+		sleep 5
+		bash tools.sh
+	fi
 fi
 # 5th
 if [ $n -eq 5 ]; then
